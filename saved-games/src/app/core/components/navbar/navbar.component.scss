@@ -1,0 +1,13 @@
+mat-toolbar {
+    div.navbar-content {
+        .brand-container {
+            display: flex;
+            align-items: center;
+
+            .brand-logo {
+                width: 50px;
+                margin-right: 10px;
+            }
+        }
+    }
+}
