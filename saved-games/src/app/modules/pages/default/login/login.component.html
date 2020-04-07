@@ -1,0 +1,20 @@
+<div class="background d-flex justify-content-center align-items-center">
+    <mat-card class="login-card d-flex justify-content-center align-items-center">
+        <img mat-card-image src="../../../../../assets/images/svg/Saved Games.svg" alt="Saved Games logo">
+        <mat-card-content>
+            <p>
+                <mat-form-field appearance="outline">
+                    <mat-label>E-mail ou username</mat-label>
+                    <input matInput placeholder="Placeholder">
+                    <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+                </mat-form-field>
+                <mat-form-field appearance="outline">
+                    <mat-label>Senha</mat-label>
+                    <input matInput placeholder="Placeholder">
+                    <mat-icon matSuffix>{{ hide ? 'visibility_off' : 'visibility' }}</mat-icon>
+                </mat-form-field>
+                <button class="right" mat-flat-button color="primary">ENTRAR</button>
+            </p>
+        </mat-card-content>
+    </mat-card>
+</div>

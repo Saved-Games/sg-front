@@ -1,3 +1,4 @@
+import { ActivatedRoute, NavigationEnd, Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,9 +8,28 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavbarComponent implements OnInit {
 
-  constructor() { }
+  isLoginPage = false;
+
+  constructor(private route: Router) { }
 
   ngOnInit(): void {
+    this.hideNavbarOnLogin();
+  }
+
+  hideNavbarOnLogin(): void {
+    this.route.events.subscribe((navigation: NavigationEnd) => {
+      if (navigation instanceof NavigationEnd) {
+        this.isLoginPage = navigation.url.includes('/login');
+      }
+    });
+  }
+
+  isNotLoginPage(): boolean {
+    if (this.isLoginPage === true) {
+      return false;
+    } else {
+      return true;
+    }
   }
 
 }
