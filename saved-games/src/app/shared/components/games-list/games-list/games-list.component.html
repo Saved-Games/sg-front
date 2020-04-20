@@ -1,10 +1,20 @@
 <div *ngIf="games.length" class="games-container">
-    <div class="cover-container" *ngFor="let game of games">
-        <img class="cover" [src]="game.cover" [alt]="game.name">
-    </div>
-    <div class="paginator-container">
-        <mat-paginator [length]="length" [pageSize]="pageSize" [pageSizeOptions]="pageSizeOptions"
-            (page)="pageEvent = $event">
-        </mat-paginator>
-    </div>
+    <mat-card class="card-form">
+        <form>
+            <mat-form-field class="example-full-width">
+                <mat-label>Nome do jogo</mat-label>
+                <input matInput placeholder="Ex. Fifa 20">
+            </mat-form-field>
+        </form>
+    </mat-card>
+    <mat-card class="card-contatiner">
+        <div class="cover-container" *ngFor="let game of games">
+            <img class="cover" [src]="game.cover" [alt]="game.name">
+        </div>
+        <div class="paginator-container">
+            <mat-paginator [length]="length" [pageSize]="pageSize" [pageSizeOptions]="pageSizeOptions"
+                (page)="pageChange($event)">
+            </mat-paginator>
+        </div>
+    </mat-card>
 </div>

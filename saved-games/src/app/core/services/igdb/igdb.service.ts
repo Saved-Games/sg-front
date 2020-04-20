@@ -11,8 +11,8 @@ export class IgdbService {
 
   constructor(private http: HttpClient) { }
 
-  getAllGames(page: number = 0): Observable<ResponseAPI<Game[]>> {
-    return this.http.get<ResponseAPI<Game[]>>(`http://localhost:3000/igdb/all-games?page=${page}`);
+  getAllGames(page: number = 0, limit: number = 10): Observable<ResponseAPI<Game[]>> {
+    return this.http.get<ResponseAPI<Game[]>>(`http://localhost:3000/igdb/all-games?page=${page}&limit=${limit}`);
   }
 
 }

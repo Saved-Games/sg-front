@@ -12,13 +12,14 @@ import { ResponseAPI } from '../../../models/response-api';
 })
 export class GamesListComponent implements OnInit {
 
-  // Games list
+  // Games List
   games: any[] = [];
 
   // MatPaginator Inputs
-  length = 100;
-  pageSize = 10;
-  pageSizeOptions: number[] = [5, 10, 25, 100];
+  length = 5000;
+  pageSize = 30;
+  pageSizeOptions: number[] = [15, 30, 50, 100];
+  pageIndex = 0;
 
   // MatPaginator Output
   pageEvent: PageEvent;
@@ -30,7 +31,7 @@ export class GamesListComponent implements OnInit {
   }
 
   getAllGames(): void {
-    this.igdbService.getAllGames().subscribe((response: ResponseAPI<Game[]>) => {
+    this.igdbService.getAllGames(this.pageIndex, this.pageSize).subscribe((response: ResponseAPI<Game[]>) => {
       this.games = response.body;
       console.log(this.games);
     });
@@ -40,5 +41,12 @@ export class GamesListComponent implements OnInit {
     if (setPageSizeOptionsInput) {
       this.pageSizeOptions = setPageSizeOptionsInput.split(',').map(str => +str);
     }
+  }
+
+  pageChange(event: PageEvent) {
+    this.pageEvent = event;
+    this.pageIndex = this.pageEvent.pageIndex;
+    this.pageSize = this.pageEvent.pageSize;
+    this.getAllGames();
   }
 }
