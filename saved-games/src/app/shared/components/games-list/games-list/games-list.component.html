@@ -1,0 +1,10 @@
+<div *ngIf="games.length" class="games-container">
+    <div class="cover-container" *ngFor="let game of games">
+        <img class="cover" [src]="game.cover" [alt]="game.name">
+    </div>
+    <div class="paginator-container">
+        <mat-paginator [length]="length" [pageSize]="pageSize" [pageSizeOptions]="pageSizeOptions"
+            (page)="pageEvent = $event">
+        </mat-paginator>
+    </div>
+</div>

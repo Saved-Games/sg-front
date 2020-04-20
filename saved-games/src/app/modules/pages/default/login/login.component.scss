@@ -16,3 +16,65 @@
         }
     }
 }
+
+::ng-deep {
+    $custom-main-color: #649CD2;
+    $custom-label-color: rgba(255, 255, 255, .6);
+
+    // mat-icon-stepper selected color change
+    .mat-step-header .mat-step-icon-selected,
+    .mat-step-header .mat-step-icon-state-done,
+    .mat-step-header .mat-step-icon-state-edit {
+        background-color: $custom-main-color;
+    }
+
+    // input outline color
+    .mat-form-field-appearance-outline .mat-form-field-outline {
+        color: $custom-main-color;
+    }
+
+    // mat-input focused color
+    .mat-form-field-appearance-outline.mat-focused .mat-form-field-outline-thick {
+        color: $custom-main-color;
+    }
+
+    // mat-input error outline color
+    .mat-form-field-appearance-outline.mat-form-field-invalid.mat-form-field-invalid .mat-form-field-outline-thick {
+        color: $custom-main-color;
+        opacity: 0.8;
+    }
+
+    // mat-input caret color
+    .mat-input-element {
+        caret-color: $custom-main-color;
+    }
+
+    // mat-input error caret color
+    .mat-form-field-invalid .mat-input-element,
+    .mat-warn .mat-input-element {
+        caret-color: $custom-main-color;
+    }
+
+    // mat-label normal state style
+    .mat-form-field-label {
+        color: $custom-label-color;
+    }
+
+    // mat-label focused style
+    .mat-form-field.mat-focused .mat-form-field-label {
+        color: $custom-main-color;
+    }
+
+    // mat-label error style
+    .mat-form-field.mat-form-field-invalid .mat-form-field-label {
+        color: $custom-main-color;
+    }
+
+    .mat-form-field {
+        color: #fff;
+    }
+}
+
+.mat-card {
+    background: transparent;
+}

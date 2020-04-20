@@ -5,12 +5,12 @@
             <p>
                 <mat-form-field appearance="outline">
                     <mat-label>E-mail ou username</mat-label>
-                    <input matInput placeholder="Placeholder">
+                    <input matInput>
                     <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
                 </mat-form-field>
                 <mat-form-field appearance="outline">
                     <mat-label>Senha</mat-label>
-                    <input matInput placeholder="Placeholder">
+                    <input matInput [type]="hide ? 'password' : 'text'">
                     <mat-icon matSuffix>{{ hide ? 'visibility_off' : 'visibility' }}</mat-icon>
                 </mat-form-field>
                 <button class="right" mat-flat-button color="primary">ENTRAR</button>

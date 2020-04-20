@@ -1,8 +1,10 @@
-<mat-toolbar *ngIf="isNotLoginPage()" color="primary">
-    <div class="navbar-content">
-        <div class="brand-container">
-            <img class="brand-logo" src="./../../../../assets/images/svg/Saved Games.svg" alt="Saved Games logo">
-            <span class="brand-text">Saved Games</span>
+<ng-container *ngIf="isNotLoginPage()">
+    <mat-toolbar color="primary">
+        <div class="navbar-content">
+            <div class="brand-container">
+                <img class="brand-logo" src="./../../../../assets/images/svg/Saved Games.svg" alt="Saved Games logo">
+                <span class="brand-text">Saved Games</span>
+            </div>
         </div>
-    </div>
-</mat-toolbar>
+    </mat-toolbar>
+</ng-container>

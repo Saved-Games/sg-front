@@ -1,0 +1,25 @@
+.games-container {
+    margin: 0 auto;
+    max-width: 1140px;
+
+    display: flex;
+    flex-wrap: wrap;
+
+    .cover-container {
+        .cover {
+            max-width: 90px;
+            max-width: 90px;
+            margin: 6px;
+            border-radius: 8px;
+
+            cursor: pointer;
+        }
+    }
+
+    .paginator-container {
+        display: flex;
+        justify-content: center;
+
+        width: 100%;
+    }
+}
